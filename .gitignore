@@ -1,1 +1,5 @@
+# Data
+dataset
 
+# Byte-compiled
+__pycache__/
