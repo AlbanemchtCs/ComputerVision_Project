@@ -1,14 +1,19 @@
 # :globe_with_meridians: Projet Noise2Noise DeepLearning
 Projet pour le cours de DeepLearning à CentraleSupélec. 
+
 Le dataset du projet se trouve sur [GoogleDrive](https://drive.google.com/drive/folders/166pH_Nfa0afFc2q_0gLWiRlhbKv8xAH2?usp=sharing).
 
 ## 🎯 Objectifs
 Le but de ce projet du cours Deep Learning est d’implémenter un modèle similaire au [Noise2Noise](https://arxiv.org/pdf/1803.04189.pdf), un réseau de
-débruitage d’images entraîné sans image de référence propre. [Kaggle](https://www.kaggle.com/datasets/mehrdadkianiosh/noisy-images?resource=download) mettant à disposition un dataset basé sur le papier original, l’objectif est d’étudier et d’implémenter différentes architectures de réseaux de neurones afin de vérifier les
+débruitage d’images entraîné sans image de référence propre. 
+
+[Kaggle](https://www.kaggle.com/datasets/mehrdadkianiosh/noisy-images?resource=download) mettant à disposition un dataset basé sur le papier original, l’objectif est d’étudier et d’implémenter différentes architectures de réseaux de neurones afin de vérifier les
 affirmations et résultats du papier original. Le code des auteurs se basant sur TensorFlow, le framework PyTorch est ici utilisé comme alternative.
 
 ## :page_facing_up: Description
-Avec Noise2Noise, les auteurs souhaitent tirer parti des DNN (deep neural networks) pour éviter la modélisation de vraisemblance statistique explicite préalable des images bruitées et à la place apprendre à mettre en correspondance les images bruitées avec les images propres non observées. En particulier, le débruitage peut être réalisé en utilisant uniquement des images bruitées, si le bruit est additif et non biaisé. En d’autres termes, il est possible, à partir des données d’apprentissage sur deux images bruitées de manière indépendante, d’apprendre indirectement le modèle de vraisemblance statistique explicite de la corruption sans se baser sur un modèle de débruitage qui utilise des images propres.
+Avec Noise2Noise, les auteurs souhaitent tirer parti des DNN (deep neural networks) pour éviter la modélisation de vraisemblance statistique explicite préalable des images bruitées et à la place apprendre à mettre en correspondance les images bruitées avec les images propres non observées. 
+
+En particulier, le débruitage peut être réalisé en utilisant uniquement des images bruitées, si le bruit est additif et non biaisé. En d’autres termes, il est possible, à partir des données d’apprentissage sur deux images bruitées de manière indépendante, d’apprendre indirectement le modèle de vraisemblance statistique explicite de la corruption sans se baser sur un modèle de débruitage qui utilise des images propres.
 
 ## 🤔 Choix techniques
 Deux modèles ont été implémentés : un Resnet et un U-Net. Ces deux derniers découlent de l’architecture Noise2Noise du papier original. 
