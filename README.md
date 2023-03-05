@@ -36,7 +36,7 @@ Notre répertoire est segmenté en 4 fichiers jupyter notebooks, 3 fichiers .pth
 │     ├── parameters_models_Resnet.pth
 │     ├── Noise2Noise_UNet.ipynb
 │     ├── parameters_models_UNet.pth
-│     ├── Noise2Noise_Discriminative.ipynb
+│     ├── Inverse_Noise2Noise_Discriminative.ipynb
 │     └── parameters_models_Discriminative.pth
 └── Preprocessing
       └──  Data_augmentation.ipynb
@@ -47,7 +47,7 @@ Notre répertoire est segmenté en 4 fichiers jupyter notebooks, 3 fichiers .pth
 - ``CONTRIBUTING.md`` contient l'ensemble des informations sur les normes et les pratiques de collaboration et de gestion du projet.
 - ``.gitignore`` contient les fichiers qui doivent être ignorés lors de l'ajout de fichiers au dépôt Git.
 - ``requirements.txt`` contient la liste des modules et des bibliothèques Python qui doivent être installés, ainsi que leur version spécifique.
-- ``Networks`` contient l'ensemble des jupyter notebooks de nos réseaux implémentés ``Noise2Noise_ResNet.ipynb``, ``Noise2Noise_UNet.ipynb`` et ``Noise2Noise_Discriminative.ipynb``, ainsi que les fichiers de sauvegarde des paramètres du dernier training de chaque modèle ``parameters_models_Resnet.pth``, ``parameters_models_UNet.pth`` et ``parameters_models_Discriminative.pth``.
+- ``Networks`` contient l'ensemble des jupyter notebooks de nos réseaux implémentés ``Noise2Noise_ResNet.ipynb``, ``Noise2Noise_UNet.ipynb`` et ``Inverse_Noise2Noise_Discriminative.ipynb``, ainsi que les fichiers de sauvegarde des paramètres du dernier training de chaque modèle ``parameters_models_Resnet.pth``, ``parameters_models_UNet.pth`` et ``parameters_models_Discriminative.pth``.
 - ``Preprocessing`` contient le jupyter notebook ``Data_augmentation.ipynb`` qui permet de générer les fichiers augmentés pour le training set et validation set (utilisé comme training set dans le réseau discriminatif).
 
 ## :wrench: Installation
@@ -76,7 +76,7 @@ Exécuter ensuite les notebooks jupyter dans l'ordre suivant :
 1. Data_augmentation.ipynb 
 2. Noise2Noise_ResNet.ipynb
 3. Noise2Noise_UNet.ipynb
-4. Noise2Noise_Discriminative.ipynb
+4. Inverse_Noise2Noise_Discriminative.ipynb
 
 ## :pencil2: Auteur
 - MICHOT Albane
