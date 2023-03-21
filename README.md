@@ -1,14 +1,12 @@
-# :globe_with_meridians: Projet Noise2Noise DeepLearning
-Projet pour le cours de DeepLearning à CentraleSupélec
+# :globe_with_meridians: Projet Noise2Noise DeepLearning et ComputerVision
+Projet pour les cours de DeepLearning et ComputerVision à CentraleSupélec.
 
-Le dataset du projet se trouve sur [GoogleDrive](https://drive.google.com/drive/folders/166pH_Nfa0afFc2q_0gLWiRlhbKv8xAH2?usp=sharing).
+Le dataset du projet se trouve sur [GoogleDrive](https://drive.google.com/drive/folders/1ibHySGXsBqP30s7mwOPyFWa1eA8NYo2J?usp=sharing).
 
 ## 🎯 Objectifs
-Le but de ce projet du cours Deep Learning est d’implémenter un modèle similaire au [Noise2Noise](https://arxiv.org/pdf/1803.04189.pdf), un réseau de
-débruitage d’images entraîné sans image de référence propre. 
+Le but de ce projet des cours Deep Learning et ComputerVision est d’implémenter un modèle similaire au [Noise2Noise](https://arxiv.org/pdf/1803.04189.pdf), un réseau de débruitage d’images entraîné sans image de référence propre. 
 
-[Kaggle](https://www.kaggle.com/datasets/mehrdadkianiosh/noisy-images?resource=download) mettant à disposition un dataset basé sur le papier original, l’objectif est d’étudier et d’implémenter différentes architectures de réseaux de neurones afin de vérifier les
-affirmations et résultats du papier original. Le code des auteurs se basant sur TensorFlow, le framework PyTorch est ici utilisé comme alternative.
+[Kaggle](https://www.kaggle.com/datasets/mehrdadkianiosh/noisy-images?resource=download) mettant à disposition un dataset basé sur le papier original, l’objectif est d’étudier et d’implémenter différentes architectures de réseaux de neurones afin de vérifier les affirmations et résultats du papier original. Le code des auteurs se basant sur TensorFlow, le framework PyTorch est ici utilisé comme alternative.
 
 ## :page_facing_up: Description
 Avec Noise2Noise, les auteurs souhaitent tirer parti des DNN (deep neural networks) pour éviter la modélisation de vraisemblance statistique explicite préalable des images bruitées et à la place apprendre à mettre en correspondance les images bruitées avec les images propres non observées. 
@@ -78,8 +76,9 @@ Exécuter ensuite les notebooks jupyter dans l'ordre suivant :
 3. Noise2Noise_UNet.ipynb
 4. Inverse_Noise2Noise_Discriminative.ipynb
 
-## :pencil2: Auteur
+## :pencil2: Auteurs
 - MICHOT Albane
+- NONCLERCQ Rodolphe
 
 
 
