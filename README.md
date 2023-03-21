@@ -1,5 +1,5 @@
 # :globe_with_meridians: Projet Noise2Noise DeepLearning
-Projet pour le cours de DeepLearning à CentraleSupélec. 
+Projet pour le cours de DeepLearning à CentraleSupélec
 
 Le dataset du projet se trouve sur [GoogleDrive](https://drive.google.com/drive/folders/166pH_Nfa0afFc2q_0gLWiRlhbKv8xAH2?usp=sharing).
 
