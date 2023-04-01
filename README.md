@@ -22,7 +22,7 @@ Un réseau discriminant a également été implémenté pour pouvoir comparer la
 
 Une augmentation des données a été réalisé sur l'ensemble des trois modèles pour améliorer notre performance globale des modèles, basée sur la métrique PSNR (Peak Signal Noise Ratio), exprimée en décibel (dB). Le PSNR permet de quantifier la performance des modèles en mesurant la qualité de reconstruction de l’image compressée par rapport à l’image propre.
 
-Différents méthodes de Computer Vision ont été implémentées dans le but d'améliorer notre PSNR moyen final après entraînement sur notre réseau U-Net ayant eu la meilleure performance : mise en oeuvre de six filtres (médian, gaussien, bilatéral, unsharp masking, unsharp masking & médian et nagao), un réentrainement de notre modèle et un générateur d'augmentation des données.
+Différentes méthodes de Computer Vision ont été implémentées dans le but d'améliorer notre PSNR moyen final après entraînement sur notre réseau U-Net ayant eu la meilleure performance : mise en oeuvre de six filtres (médian, gaussien, bilatéral, unsharp masking, unsharp masking & médian et nagao), un réentrainement de notre modèle et un générateur d'augmentation des données.
 
 ## :card_index_dividers: Segmentation
 Notre répertoire est segmenté en 5 fichiers jupyter notebooks, 3 fichiers .pth, deux fichiers markdown, un fichier .gitinore et un fichier texte pour les requirements :
