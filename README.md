@@ -4,7 +4,7 @@ Projet pour les cours de DeepLearning et ComputerVision à CentraleSupélec.
 Le dataset du projet se trouve sur [GoogleDrive](https://drive.google.com/drive/folders/1ibHySGXsBqP30s7mwOPyFWa1eA8NYo2J?usp=sharing).
 
 ## 🎯 Objectifs
-Le but de ce projet du cours de Computer Vision est de poursuivre le projet de DeepLearning par l’application de méthodes de ComputerVision (filtres, réentrainement du modèle et poursuite de la data augmentation), pour améliorer nos résultats obtenus.  
+Le but de ce projet du cours de Computer Vision est de poursuivre le projet de DeepLearning par l’application de méthodes de ComputerVision (filtres, implémentation de deux modèles en série, poursuite de la data augmentation par la mise en place d'un générateur et optimisation de l'entraînement), pour améliorer nos résultats obtenus.  
 
 Le but de ce projet des cours Deep Learning et ComputerVision est d’implémenter un modèle similaire au [Noise2Noise](https://arxiv.org/pdf/1803.04189.pdf), un réseau de débruitage d’images entraîné sans image de référence propre.   
 
@@ -22,10 +22,10 @@ Un réseau discriminant a également été implémenté pour pouvoir comparer la
 
 Une augmentation des données a été réalisé sur l'ensemble des trois modèles pour améliorer notre performance globale des modèles, basée sur la métrique PSNR (Peak Signal Noise Ratio), exprimée en décibel (dB). Le PSNR permet de quantifier la performance des modèles en mesurant la qualité de reconstruction de l’image compressée par rapport à l’image propre.
 
-Différentes méthodes de Computer Vision ont été implémentées dans le but d'améliorer notre PSNR moyen final après entraînement sur notre réseau U-Net ayant eu la meilleure performance : mise en oeuvre de six filtres (médian, gaussien, bilatéral, unsharp masking, unsharp masking & médian et nagao), un réentrainement de notre modèle et un générateur d'augmentation des données.
+Différentes méthodes de Computer Vision ont été implémentées dans le but d'améliorer notre PSNR moyen final après entraînement sur notre réseau U-Net ayant eu la meilleure performance : mise en oeuvre de six filtres (médian, gaussien, bilatéral, unsharp masking, unsharp masking & médian et nagao), une implémentation de deux modèles en série, un générateur d'augmentation des données et une optimisation de l'entraînement.
 
 ## :card_index_dividers: Segmentation
-Notre répertoire est segmenté en 5 fichiers jupyter notebooks, 3 fichiers .pth, deux fichiers markdown, un fichier .gitinore et un fichier texte pour les requirements :
+Notre répertoire est segmenté en 5 fichiers jupyter notebooks, 1 fichier python, 3 fichiers .pth, deux fichiers markdown, un fichier .gitinore, un fichier texte pour les requirements et un fichier pdf :
 
 ```bash 
 .
@@ -33,6 +33,7 @@ Notre répertoire est segmenté en 5 fichiers jupyter notebooks, 3 fichiers .pth
 ├── CONTRIBUTING.md
 ├── .gitignore
 ├── requirements.txt 
+├── ComputerVision_Projet.pdf 
 ├── Networks
 │     ├── Noise2Noise_ResNet.ipynb
 │     ├── parameters_models_Resnet.pth
@@ -42,7 +43,8 @@ Notre répertoire est segmenté en 5 fichiers jupyter notebooks, 3 fichiers .pth
 │     └── parameters_models_Discriminative.pth
 └── Preprocessing
       ├── Data_augmentation.ipynb
-      └── filters.ipynb
+      ├── filters.ipynb
+      └── Generator.py
 
 
 ```
@@ -51,30 +53,29 @@ Notre répertoire est segmenté en 5 fichiers jupyter notebooks, 3 fichiers .pth
 - ``CONTRIBUTING.md`` contient l'ensemble des informations sur les normes et les pratiques de collaboration et de gestion du projet.
 - ``.gitignore`` contient les fichiers qui doivent être ignorés lors de l'ajout de fichiers au dépôt Git.
 - ``requirements.txt`` contient la liste des modules et des bibliothèques Python qui doivent être installés, ainsi que leur version spécifique.
+- ``ComputerVision_Projet.pdf`` est notre rapport qui contient l'ensemble des explications sur le projet.
 - ``Networks`` contient l'ensemble des jupyter notebooks de nos réseaux implémentés ``Noise2Noise_ResNet.ipynb``, ``Noise2Noise_UNet.ipynb`` et ``Inverse_Noise2Noise_Discriminative.ipynb``, ainsi que les fichiers de sauvegarde des paramètres du dernier training de chaque modèle ``parameters_models_Resnet.pth``, ``parameters_models_UNet.pth`` et ``parameters_models_Discriminative.pth``.
-- ``Preprocessing`` contient le jupyter notebook ``Data_augmentation.ipynb`` qui permet de générer les fichiers augmentés pour le training set et validation set (utilisé comme training set dans le réseau discriminatif) et le jupyter notebook ``filters.ipynb`` qui permet de générer les fichiers pickle avec la mise en oeuvre des filtres sur les images d'entrée pour le training set et le validation set.
+- ``Preprocessing`` contient le jupyter notebook ``Data_augmentation.ipynb`` qui permet de générer les fichiers augmentés pour le training set et validation set (utilisé comme training set dans le réseau discriminatif), le jupyter notebook ``filters.ipynb`` qui permet de générer les fichiers pickle avec la mise en oeuvre des filtres sur les images d'entrée pour le training set et le validation set et le fichier python ``Generator.py`` qui est notre générateur d'augmentation des données.
 
 ## :wrench: Installation
 Pour lancer, nous vous recommandons sur un terminal uniquement :
 
-1. Tout d'abord, assurez-vous que vous avez installé une version `python` supérieure à 3.10. Nous vous conseillons un environnement conda avec la commande suivante : 
-```bash
-conda create --name noise2noise python=3.10.8
-```
-- Pour activer l'environnement :
-```bash
-conda activate noise2noise
-```
-- Pour accéder au répertoire : 
+1. Tout d'abord, assurez-vous que vous avez installé une version `python` supérieure à 3.9 et `Anaconda` ou `Miniconda`.
+
+2. Pour cloner le répertoire, choisissez l’emplacement où vous souhaitez accéder au répertoire sur votre ordinateur, en tapant la commande suivante sur votre Terminal :
 ```bash
 cd desktop # affichera sur votre Bureau d'ordinateur 
 git clone https://gitlab-student.centralesupelec.fr/albane.michot/DeepLearning_Project.git
 cd DeepLearning_Project
 ```
 
-2. Vous devez ensuite installer tous les `requirements` en utilisant la commande suivante :
+3. Nous vous conseillons un environnement conda avec la commande suivante qui permet d'installer directement les `requirements` sur l'environnment créé : 
 ```bash
-conda install --file requirements.txt
+conda create --name noise2noise --file requirements.txt
+```
+- Pour activer l'environnement :
+```bash
+conda activate noise2noise
 ```
 
 Exécuter ensuite les notebooks jupyter dans l'ordre suivant : 
